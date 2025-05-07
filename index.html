@@ -9,7 +9,8 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/api/placeholder/32/32" />
-
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 
@@ -896,6 +897,260 @@
             visibility: visible;
         }
 
+        /* Cookie Consent Banner */
+  .cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    font-family: 'Poppins', sans-serif;
+    transform: translateY(100%);
+    animation: slideUp 0.5s forwards;
+  }
+
+  @keyframes slideUp {
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideDown {
+    to {
+      transform: translateY(100%);
+    }
+  }
+
+  .cookie-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .cookie-header {
+    margin-bottom: 20px;
+  }
+
+  .cookie-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+  }
+
+  .cookie-header p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .cookie-body {
+    margin-bottom: 20px;
+  }
+
+  .cookie-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    transition: background-color 0.3s ease;
+  }
+
+  .cookie-option:hover {
+    background-color: #f1f5f9;
+  }
+
+  .cookie-switch {
+    margin-right: 15px;
+    min-width: 50px;
+  }
+
+  .cookie-switch input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .switch-label {
+    cursor: pointer;
+    width: 50px;
+    height: 24px;
+    background: #ccc;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+
+  .switch-label:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+  }
+
+  input:checked + .switch-label {
+    background: var(--primary);
+  }
+
+  input:checked + .switch-label:after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+  }
+
+  .cookie-switch.disabled .switch-label {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .cookie-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--dark);
+  }
+
+  .cookie-info p {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .cookie-footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cookie-footer button {
+    margin-right: 10px;
+  }
+
+  .cookie-policy-link {
+    color: var(--gray);
+    text-decoration: underline;
+    font-size: 0.9rem;
+    margin-left: auto;
+  }
+
+  /* Cookie Settings Button */
+  .cookie-settings-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .cookie-settings-btn:hover {
+    transform: scale(1.1);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .cookie-option {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cookie-switch {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    .cookie-footer {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .cookie-footer button {
+      margin-right: 0;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    .cookie-policy-link {
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+
+  /* Animation for Success Message */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  /* Cookie Success Message */
+  .cookie-success {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    border-left: 4px solid var(--success);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .cookie-success i {
+    font-size: 1.5rem;
+    color: var(--success);
+    margin-right: 10px;
+  }
+
+  .cookie-success p {
+    margin: 0;
+    color: var(--dark);
+  }
+
+  /* Footer policy links */
+  .footer-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-link {
+    color: #cbd5e1;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+  }
+
+  .footer-link:hover {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+
         /* Responsive styles */
         @media (max-width: 1024px) {
             .hero-title {
@@ -1468,9 +1723,9 @@
                 <div>
                     <h3 class="footer-title">Legal</h3>
                     <div class="footer-links">
-                        <a href="#" class="footer-link">Privacy Policy</a>
-                        <a href="#" class="footer-link">Termini di Servizio</a>
-                        <a href="#" class="footer-link">Cookie Policy</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal" class="footer-link">Privacy Policy</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal" class="footer-link">Termini di Servizio</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#cookiePolicyModal" class="footer-link">Cookie Policy</a>
                     </div>
                 </div>
             </div>
@@ -1485,7 +1740,499 @@
     <div class="back-to-top" id="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
+    <!-- POLICY MODALS -->
+<div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="privacyPolicyModalLabel">Privacy Policy</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>Privacy Policy di dcreativo.ch</h2>
+          <p>Ultimo aggiornamento: 7 Maggio 2025</p>
 
+          <h3>1. Introduzione</h3>
+          <p>Benvenuto su dcreativo.ch. La tua privacy è importante per noi. Questa Privacy Policy spiega come raccogliamo, utilizziamo, divulghiamo e proteggiamo le tue informazioni quando visiti il nostro sito web.</p>
+
+          <h3>2. Informazioni che raccogliamo</h3>
+          <p>Possiamo raccogliere i seguenti tipi di informazioni:</p>
+          <ul>
+            <li><strong>Informazioni personali:</strong> Nome, indirizzo email, numero di telefono e altri dettagli che ci fornisci volontariamente attraverso il nostro modulo di contatto.</li>
+            <li><strong>Dati di utilizzo:</strong> Informazioni su come interagisci con il nostro sito, inclusi gli indirizzi IP, il tipo di browser, il dispositivo utilizzato, le pagine visitate e il tempo trascorso sul sito.</li>
+            <li><strong>Cookie e tecnologie simili:</strong> Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza sul nostro sito. Per maggiori informazioni, consulta la nostra <a href="#" data-bs-toggle="modal" data-bs-target="#cookiePolicyModal">Cookie Policy</a>.</li>
+          </ul>
+
+          <h3>3. Come utilizziamo le tue informazioni</h3>
+          <p>Utilizziamo le informazioni raccolte per:</p>
+          <ul>
+            <li>Fornire, gestire e migliorare il nostro sito web</li>
+            <li>Rispondere alle tue richieste, commenti o domande</li>
+            <li>Inviare informazioni che hai richiesto o che pensiamo possano interessarti</li>
+            <li>Monitorare e analizzare tendenze, utilizzo e attività in relazione al nostro sito</li>
+            <li>Rilevare, prevenire e affrontare problemi tecnici o di sicurezza</li>
+          </ul>
+
+          <h3>4. Condivisione delle informazioni</h3>
+          <p>Non vendiamo, scambiamo o trasferiamo in altro modo le tue informazioni personali a terze parti senza il tuo consenso, ad eccezione di quanto descritto in questa Privacy Policy. Possiamo condividere le tue informazioni con:</p>
+          <ul>
+            <li><strong>Fornitori di servizi:</strong> Terze parti che ci aiutano a gestire il nostro sito web, a condurre le nostre attività commerciali o a fornire servizi ai nostri utenti.</li>
+            <li><strong>Conformità legale:</strong> Quando riteniamo in buona fede che la divulgazione sia necessaria per rispettare una legge, un regolamento o una richiesta legale; per proteggere i diritti, la proprietà o la sicurezza nostra, dei nostri clienti o di altri.</li>
+          </ul>
+
+          <h3>5. Sicurezza dei dati</h3>
+          <p>Adottiamo misure ragionevoli per proteggere le tue informazioni personali da perdita, uso improprio, accesso non autorizzato, divulgazione, alterazione e distruzione. Tuttavia, nessun metodo di trasmissione o archiviazione elettronica è sicuro al 100%.</p>
+
+          <h3>6. I tuoi diritti</h3>
+          <p>Se sei residente nell'Unione Europea, hai determinati diritti in materia di protezione dei dati, tra cui il diritto di:</p>
+          <ul>
+            <li>Accedere e ottenere una copia delle tue informazioni personali</li>
+            <li>Rettificare o cancellare le tue informazioni personali</li>
+            <li>Limitare od opporti al nostro trattamento delle tue informazioni personali</li>
+            <li>Richiedere la portabilità dei dati</li>
+            <li>Ritirare il tuo consenso in qualsiasi momento</li>
+          </ul>
+
+          <h3>7. Link a siti web di terze parti</h3>
+          <p>Il nostro sito web può contenere link a siti web di terze parti. Non siamo responsabili per le pratiche sulla privacy o il contenuto di tali siti web. Ti incoraggiamo a leggere le politiche sulla privacy di ogni sito web che visiti.</p>
+
+          <h3>8. Modifiche a questa Privacy Policy</h3>
+          <p>Possiamo aggiornare questa Privacy Policy di tanto in tanto. Ti informeremo di eventuali modifiche pubblicando la nuova Privacy Policy su questa pagina e aggiornando la data "Ultimo aggiornamento" all'inizio di questa Privacy Policy.</p>
+
+          <h3>9. Contatti</h3>
+          <p>Se hai domande o commenti su questa Privacy Policy, contattaci all'indirizzo email: info@dcreativo.ch</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ho capito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="termsModalLabel">Termini di Servizio</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>Termini di Servizio di dcreativo.ch</h2>
+          <p>Ultimo aggiornamento: 7 Maggio 2025</p>
+
+          <h3>1. Accettazione dei Termini</h3>
+          <p>Benvenuto su dcreativo.ch. Questi Termini di Servizio ("Termini") regolano l'utilizzo del sito web dcreativo.ch ("Sito"). Accedendo o utilizzando il Sito, accetti di essere vincolato da questi Termini. Se non sei d'accordo con qualsiasi parte di questi Termini, non puoi accedere al Sito.</p>
+
+          <h3>2. Modifiche ai Termini</h3>
+          <p>Ci riserviamo il diritto di modificare o sostituire questi Termini in qualsiasi momento a nostra discrezione. La versione più aggiornata sarà sempre disponibile sul Sito. È tua responsabilità verificare periodicamente eventuali modifiche. L'uso continuato del Sito dopo la pubblicazione di eventuali modifiche costituisce l'accettazione di tali modifiche.</p>
+
+          <h3>3. Accesso al Sito</h3>
+          <p>Ci riserviamo il diritto di ritirare o modificare il nostro Sito e qualsiasi servizio o materiale fornito sul Sito a nostra discrezione senza preavviso. Non saremo responsabili se, per qualsiasi motivo, il Sito non è disponibile in qualsiasi momento o per qualsiasi periodo.</p>
+
+          <h3>4. Proprietà Intellettuale</h3>
+          <p>Il Sito e tutti i suoi contenuti, caratteristiche e funzionalità (inclusi, a titolo esemplificativo, tutte le informazioni, software, testo, display, immagini, video e audio, nonché il design, la selezione e la disposizione degli stessi) sono di proprietà di Domenico Riccio, dei suoi licenzianti o di altri fornitori di tali materiali e sono protetti da diritti d'autore, marchi registrati, brevetti, segreti commerciali e altre leggi sulla proprietà intellettuale o sui diritti di proprietà.</p>
+
+          <h3>5. Usi Consentiti</h3>
+          <p>È possibile utilizzare il Sito solo per scopi legittimi e in conformità con questi Termini. Accetti di non utilizzare il Sito:</p>
+          <ul>
+            <li>In modo che violi qualsiasi legge o regolamento applicabile</li>
+            <li>Per sfruttare, danneggiare o tentare di sfruttare o danneggiare minori in qualsiasi modo</li>
+            <li>Per trasmettere o procurare l'invio di qualsiasi materiale pubblicitario o promozionale senza il nostro previo consenso scritto</li>
+            <li>Per impersonare o tentare di impersonare l'Azienda, un dipendente dell'Azienda, un altro utente o qualsiasi altra persona o entità</li>
+            <li>In qualsiasi modo che possa disabilitare, sovraccaricare, danneggiare o compromettere il Sito o interferire con l'uso del Sito da parte di qualsiasi altra parte</li>
+          </ul>
+
+          <h3>6. Limitazione di Responsabilità</h3>
+          <p>In nessun caso Domenico Riccio, né i suoi direttori, dipendenti, partner, agenti, fornitori o affiliati, saranno responsabili per qualsiasi danno indiretto, consequenziale, speciale, incidentale o punitivo, inclusi, senza limitazione, perdita di profitti, dati, uso, avviamento o altre perdite intangibili, derivanti da (i) il tuo accesso o utilizzo o incapacità di accedere o utilizzare il Sito; (ii) qualsiasi condotta o contenuto di terze parti sul Sito; (iii) qualsiasi contenuto ottenuto dal Sito; e (iv) accesso non autorizzato, uso o alterazione delle tue trasmissioni o contenuti, sia basato su garanzia, contratto, illecito civile (inclusa negligenza) o qualsiasi altra teoria legale, indipendentemente dal fatto che siamo stati informati o meno della possibilità di tale danno.</p>
+
+          <h3>7. Indennizzo</h3>
+          <p>Accetti di difendere, indennizzare e tenere indenne Domenico Riccio e i suoi licenzianti e fornitori di servizi, e i suoi e loro rispettivi funzionari, direttori, dipendenti, appaltatori, agenti, licenzianti, fornitori, successori e assegnatari da e contro qualsiasi reclamo, responsabilità, danni, sentenze, premi, perdite, costi, spese o onorari (incluse ragionevoli spese legali) derivanti da o relativi alla tua violazione di questi Termini.</p>
+
+          <h3>8. Legge Applicabile</h3>
+          <p>Questi Termini e qualsiasi controversia o reclamo derivante da o in connessione con essi o il loro oggetto o formazione (incluse controversie o reclami non contrattuali) saranno regolati e interpretati in conformità con le leggi della Svizzera.</p>
+
+          <h3>9. Contatti</h3>
+          <p>Per domande sui Termini di Servizio, contattaci all'indirizzo email: info@dcreativo.ch</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ho capito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="cookiePolicyModal" tabindex="-1" aria-labelledby="cookiePolicyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cookiePolicyModalLabel">Cookie Policy</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>Cookie Policy di dcreativo.ch</h2>
+          <p>Ultimo aggiornamento: 7 Maggio 2025</p>
+
+          <h3>1. Cosa sono i cookie?</h3>
+          <p>I cookie sono piccoli file di testo che vengono memorizzati sul tuo dispositivo (computer, tablet o telefono cellulare) quando visiti un sito web. I cookie sono ampiamente utilizzati per far funzionare i siti web o per farli funzionare in modo più efficiente, nonché per fornire informazioni ai proprietari del sito.</p>
+
+          <h3>2. Come utilizziamo i cookie</h3>
+          <p>Utilizziamo diversi tipi di cookie per vari scopi:</p>
+
+          <h4>2.1 Cookie essenziali/necessari</h4>
+          <p>Questi cookie sono necessari per il funzionamento del sito web e non possono essere disattivati nei nostri sistemi. Di solito vengono impostati solo in risposta ad azioni da te effettuate che equivalgono a una richiesta di servizi, come l'impostazione delle tue preferenze di privacy, l'accesso o la compilazione di moduli. Puoi impostare il tuo browser per bloccare o avvisarti di questi cookie, ma alcune parti del sito potrebbero non funzionare correttamente.</p>
+
+          <h4>2.2 Cookie analitici/di performance</h4>
+          <p>Questi cookie ci permettono di contare le visite e le fonti di traffico in modo da poter misurare e migliorare le prestazioni del nostro sito. Ci aiutano a sapere quali pagine sono le più e le meno popolari e a vedere come i visitatori si muovono all'interno del sito. Tutte le informazioni raccolte da questi cookie sono aggregate e quindi anonime.</p>
+
+          <h4>2.3 Cookie funzionali</h4>
+          <p>Questi cookie consentono al sito web di fornire funzionalità e personalizzazione avanzate. Possono essere impostati da noi o da fornitori terzi i cui servizi abbiamo aggiunto alle nostre pagine. Se non consenti questi cookie, alcuni o tutti questi servizi potrebbero non funzionare correttamente.</p>
+
+          <h3>3. Cookie di terze parti</h3>
+          <p>In alcuni casi speciali, utilizziamo anche cookie forniti da terze parti affidabili. La sezione seguente descrive quali cookie di terze parti potresti incontrare attraverso questo sito.</p>
+          <ul>
+            <li>Questo sito utilizza Google Analytics, uno dei servizi di analisi più diffusi e affidabili sul web, per aiutarci a capire come utilizzi il sito e come possiamo migliorare la tua esperienza. Questi cookie possono tenere traccia di cose come quanto tempo trascorri sul sito e le pagine che visiti in modo che possiamo continuare a produrre contenuti interessanti.</li>
+            <li>Di tanto in tanto, testiamo nuove funzionalità e apportiamo sottili modifiche al modo in cui il sito viene consegnato. Quando stiamo ancora testando nuove funzionalità, questi cookie possono essere utilizzati per garantire che tu riceva un'esperienza coerente durante la tua visita al sito, assicurandoci di capire quali ottimizzazioni i nostri utenti apprezzano di più.</li>
+          </ul>
+
+          <h3>4. Gestione dei cookie</h3>
+          <p>Puoi controllare e/o eliminare i cookie come desideri. Puoi eliminare tutti i cookie già presenti sul tuo dispositivo e puoi impostare la maggior parte dei browser in modo da bloccare l'installazione dei cookie. Tuttavia, se lo fai, potresti dover impostare manualmente alcune preferenze ogni volta che visiti un sito e alcuni servizi e funzionalità potrebbero non funzionare.</p>
+          <p>Puoi gestire le tue preferenze sui cookie in qualsiasi momento utilizzando il nostro strumento di gestione dei cookie, accessibile tramite il pulsante "Impostazioni Cookie" presente nel footer del nostro sito.</p>
+
+          <h3>5. Modifiche alla Cookie Policy</h3>
+          <p>Possiamo aggiornare questa Cookie Policy di tanto in tanto per riflettere, ad esempio, cambiamenti nei cookie che utilizziamo o per altri motivi operativi, legali o normativi. Ti invitiamo a visitare regolarmente questa pagina per rimanere informato sul nostro utilizzo dei cookie e delle tecnologie correlate.</p>
+
+          <h3>6. Contatti</h3>
+          <p>Se hai domande sulla nostra Cookie Policy, contattaci all'indirizzo email: info@dcreativo.ch</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ho capito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookieConsent" class="cookie-consent">
+    <div class="cookie-container">
+      <div class="cookie-header">
+        <h3>Impostazioni Cookie</h3>
+        <p>Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito. I cookie essenziali sono sempre attivi in quanto necessari per il funzionamento del sito.</p>
+      </div>
+
+      <div class="cookie-body">
+        <div class="cookie-option">
+          <div class="cookie-switch disabled">
+            <input type="checkbox" id="essentialCookies" checked disabled>
+            <label for="essentialCookies" class="switch-label"></label>
+          </div>
+          <div class="cookie-info">
+            <h4>Cookie Essenziali</h4>
+            <p>Necessari per la navigazione e l'utilizzo delle funzioni base del sito.</p>
+          </div>
+        </div>
+
+        <div class="cookie-option">
+          <div class="cookie-switch">
+            <input type="checkbox" id="analyticsCookies">
+            <label for="analyticsCookies" class="switch-label"></label>
+          </div>
+          <div class="cookie-info">
+            <h4>Cookie Analitici</h4>
+            <p>Ci aiutano a capire come utilizzi il sito per migliorare l'esperienza utente.</p>
+          </div>
+        </div>
+
+        <div class="cookie-option">
+          <div class="cookie-switch">
+            <input type="checkbox" id="functionalCookies">
+            <label for="functionalCookies" class="switch-label"></label>
+          </div>
+          <div class="cookie-info">
+            <h4>Cookie Funzionali</h4>
+            <p>Consentono funzionalità avanzate e personalizzazione.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cookie-footer">
+        <button id="saveCookiePreferences" class="btn btn-primary">Salva preferenze</button>
+        <button id="acceptAllCookies" class="btn btn-outline-primary">Accetta tutti</button>
+        <button id="rejectAllCookies" class="btn btn-outline-secondary">Rifiuta tutti</button>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#cookiePolicyModal" class="cookie-policy-link">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- COOKIE SETTINGS BUTTON (visibile dopo aver chiuso il banner) -->
+  <div id="cookieSettingsBtn" class="cookie-settings-btn" style="display: none;">
+    <i class="fas fa-cookie-bite"></i>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JAVASCRIPT -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Elementi DOM
+      const cookieConsent = document.getElementById('cookieConsent');
+      const cookieSettingsBtn = document.getElementById('cookieSettingsBtn');
+      const saveCookiePreferences = document.getElementById('saveCookiePreferences');
+      const acceptAllCookies = document.getElementById('acceptAllCookies');
+      const rejectAllCookies = document.getElementById('rejectAllCookies');
+      const analyticsCookies = document.getElementById('analyticsCookies');
+      const functionalCookies = document.getElementById('functionalCookies');
+
+      // Verifica se le preferenze dei cookie sono già state impostate
+      const cookiePreferences = getCookiePreferences();
+      if (cookiePreferences) {
+        // Applica le preferenze salvate
+        if (cookiePreferences.analytics) {
+          analyticsCookies.checked = true;
+          // Qui puoi attivare i cookie analitici, ad esempio inizializzando Google Analytics
+        }
+        if (cookiePreferences.functional) {
+          functionalCookies.checked = true;
+          // Qui puoi attivare i cookie funzionali
+        }
+
+        // Nascondi il banner e mostra il pulsante delle impostazioni
+        hideBanner();
+      }
+
+      // Event listeners
+      saveCookiePreferences.addEventListener('click', function() {
+        savePreferences();
+        showSuccessMessage("Preferenze cookie salvate!");
+      });
+
+      acceptAllCookies.addEventListener('click', function() {
+        analyticsCookies.checked = true;
+        functionalCookies.checked = true;
+        savePreferences();
+        showSuccessMessage("Tutti i cookie accettati!");
+      });
+
+      rejectAllCookies.addEventListener('click', function() {
+        analyticsCookies.checked = false;
+        functionalCookies.checked = false;
+        savePreferences();
+        showSuccessMessage("Cookie opzionali rifiutati!");
+      });
+
+      cookieSettingsBtn.addEventListener('click', function() {
+        showBanner();
+      });
+
+      // Funzioni
+      function savePreferences() {
+        const preferences = {
+          essential: true, // Sempre attivi
+          analytics: analyticsCookies.checked,
+          functional: functionalCookies.checked,
+          date: new Date().toISOString()
+        };
+
+        // Salva le preferenze in un cookie
+        document.cookie = "cookiePreferences=" + JSON.stringify(preferences) + ";max-age=31536000;path=/;SameSite=Strict";
+
+        // Applica le preferenze
+        applyPreferences(preferences);
+
+        // Nascondi il banner e mostra il pulsante delle impostazioni
+        hideBanner();
+      }
+      function applyPreferences(preferences) {
+        // Attiva/disattiva i cookie in base alle preferenze
+        if (preferences.analytics) {
+          // Qui puoi attivare i cookie analitici
+          console.log('Cookie analitici attivati');
+          // Esempio: inizializzazione di Google Analytics
+          initGoogleAnalytics();
+        } else {
+          // Disattiva i cookie analitici
+          console.log('Cookie analitici disattivati');
+          // Rimuovi cookie analitici esistenti
+          removeCookies(['_ga', '_gat', '_gid']);
+        }
+
+        if (preferences.functional) {
+          // Qui puoi attivare i cookie funzionali
+          console.log('Cookie funzionali attivati');
+          // Esempio: attivare cookie di personalizzazione
+          enableFunctionalCookies();
+        } else {
+          // Disattiva i cookie funzionali
+          console.log('Cookie funzionali disattivati');
+          // Rimuovi cookie funzionali esistenti
+          disableFunctionalCookies();
+        }
+      }
+
+      function hideBanner() {
+        cookieConsent.style.animation = 'slideDown 0.5s forwards';
+        setTimeout(() => {
+          cookieConsent.style.display = 'none';
+          cookieSettingsBtn.style.display = 'flex';
+        }, 500);
+      }
+
+      function showBanner() {
+        cookieSettingsBtn.style.display = 'none';
+        cookieConsent.style.display = 'block';
+        cookieConsent.style.animation = 'slideUp 0.5s forwards';
+      }
+
+      function getCookiePreferences() {
+        // Ottieni i cookie salvati
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          if (cookie.startsWith('cookiePreferences=')) {
+            try {
+              const preferences = JSON.parse(cookie.substring('cookiePreferences='.length, cookie.length));
+
+              // Controlla se le preferenze sono scadute (6 mesi)
+              const savedDate = new Date(preferences.date);
+              const currentDate = new Date();
+              const sixMonthsInMs = 6 * 30 * 24 * 60 * 60 * 1000;
+
+              if (currentDate - savedDate > sixMonthsInMs) {
+                // Le preferenze sono scadute, richiedi il consenso
+                return null;
+              }
+
+              return preferences;
+            } catch (e) {
+              return null;
+            }
+          }
+        }
+        return null;
+      }
+
+      function showSuccessMessage(message) {
+        // Crea un elemento per il messaggio di successo
+        const successElement = document.createElement('div');
+        successElement.className = 'cookie-success';
+        successElement.innerHTML = `
+          <i class="fas fa-check-circle"></i>
+          <p>${message}</p>
+        `;
+
+        // Aggiungi al documento
+        document.body.appendChild(successElement);
+
+        // Nascondi il banner
+        hideBanner();
+
+        // Rimuovi il messaggio dopo 3 secondi
+        setTimeout(() => {
+          successElement.style.opacity = '0';
+          successElement.style.transition = 'opacity 0.5s ease';
+          setTimeout(() => {
+            document.body.removeChild(successElement);
+          }, 500);
+        }, 3000);
+      }
+
+      // Funzioni helper per la gestione dei cookie
+      function removeCookies(cookieNames) {
+        for (const name of cookieNames) {
+          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        }
+      }
+
+      function initGoogleAnalytics() {
+        // Esempio di inizializzazione di Google Analytics
+        // In un'implementazione reale, sostituisci con il tuo ID Analytics
+        if (typeof window.gtag === 'undefined') {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'GA-XXXXXXXXX'); // Sostituisci con il tuo ID Analytics
+
+          // Carica lo script di Google Analytics
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=GA-XXXXXXXXX'; // Sostituisci con il tuo ID Analytics
+          document.head.appendChild(script);
+        }
+      }
+
+      function enableFunctionalCookies() {
+        // Esempio di attivazione di cookie funzionali
+        // In un'implementazione reale, aggiungi qui la tua logica specifica
+        document.cookie = "theme=light; max-age=31536000; path=/; SameSite=Strict";
+        document.cookie = "language=it; max-age=31536000; path=/; SameSite=Strict";
+      }
+
+      function disableFunctionalCookies() {
+        // Esempio di disattivazione di cookie funzionali
+        removeCookies(['theme', 'language']);
+      }
+
+      // Aggiungi gli header per la policy di sicurezza dei cookie
+      function addCookieSecurityHeaders() {
+        // In un'applicazione reale, questo andrebbe fatto lato server
+        // Qui è solo a scopo dimostrativo
+        console.log('Aggiunti header di sicurezza per i cookie');
+        // Set-Cookie: HttpOnly; Secure; SameSite=Strict
+      }
+
+      // Inizializza le policy legali
+      function initLegalModals() {
+        // Assicurati che i link nel footer aprano i modali corretti
+        document.querySelectorAll('.footer-link').forEach(link => {
+          link.addEventListener('click', function(e) {
+            const target = this.getAttribute('data-bs-target');
+            if (target) {
+              e.preventDefault();
+              const modal = new bootstrap.Modal(document.querySelector(target));
+              modal.show();
+            }
+          });
+        });
+      }
+
+      // Chiamata alla funzione di inizializzazione dei modali
+      initLegalModals();
+
+      // Verifica la geolocalizzazione per adattare le policy per utenti EU vs non-EU
+      // Nota: in un'implementazione reale, questa logica dovrebbe essere gestita lato server
+      function checkEULocation() {
+        // Controlla se l'utente è nell'UE (esempio semplificato)
+        // In un'implementazione reale, utilizzare un servizio di geolocalizzazione
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const europeanTimezones = [
+          'Europe/Vienna', 'Europe/Brussels', 'Europe/Sofia', 'Europe/Zagreb',
+          'Europe/Nicosia', 'Europe/Prague', 'Europe/Copenhagen', 'Europe/Tallinn',
+          'Europe/Helsinki', 'Europe/Paris', 'Europe/Berlin', 'Europe/Athens',
+          'Europe/Budapest', 'Europe/Dublin', 'Europe/Rome', 'Europe/Riga',
+          'Europe/Vilnius', 'Europe/Luxembourg', 'Europe/Malta', 'Europe/Amsterdam',
+          'Europe/Warsaw', 'Europe/Lisbon', 'Europe/Bucharest', 'Europe/Bratislava',
+          'Europe/Ljubljana', 'Europe/Madrid', 'Europe/Stockholm', 'Europe/London',
+          'Europe/Zurich' // Svizzera (non nell'UE ma applica GDPR)
+        ];
+
+        return europeanTimezones.includes(timezone);
+      }
+
+      // Adatta il comportamento del banner in base alla posizione dell'utente
+      function adaptBannerToLocation() {
+        const isEU = checkEULocation();
+
+        if (!isEU) {
+          // Per utenti non-EU, possiamo avere un approccio opt-out invece di opt-in
+          // Ma manteniamo comunque la trasparenza
+          console.log('Utente non-EU rilevato, applicando approccio opt-out');
+          // Qui puoi personalizzare il messaggio o il comportamento del banner
+        } else {
+          console.log('Utente EU rilevato, applicando GDPR completo');
+        }
+      }
+
+      // Chiamare questa funzione all'inizializzazione
+      adaptBannerToLocation();
+    });
+</script>
     <!-- JavaScript -->
 <script>
     // Initialize AOS Animation Library
