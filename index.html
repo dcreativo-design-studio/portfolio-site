@@ -2366,6 +2366,26 @@
             });
         }
     });
+    // Aggiungi questo all'interno del tuo script esistente
+document.addEventListener('DOMContentLoaded', function() {
+    // Gestione corretta della chiusura dei modali
+    const modals = document.querySelectorAll('.modal');
+
+    modals.forEach(function(modal) {
+        modal.addEventListener('hidden.bs.modal', function() {
+            // Rimuovi manualmente il backdrop se esiste
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) {
+                backdrop.remove();
+            }
+
+            // Rimuovi la classe modal-open dal body
+            document.body.classList.remove('modal-open');
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+        });
+    });
+});
 </script>
 </body>
 </html>
