@@ -491,11 +491,11 @@
                 <div>
                     <h3 class="footer-title">Servizi</h3>
                     <div class="footer-links">
-                        <a href="#" class="footer-link">Web Development</a>
-                        <a href="#" class="footer-link">Front-End Development</a>
-                        <a href="#" class="footer-link">Back-End Development</a>
-                        <a href="#" class="footer-link">E-Commerce</a>
-                        <a href="#" class="footer-link">UI/UX Design</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#webDevModal" class="footer-link">Web Development</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#frontEndModal" class="footer-link">Front-End Development</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#backEndModal" class="footer-link">Back-End Development</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#ecommerceModal" class="footer-link">E-Commerce</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#uiuxModal" class="footer-link">UI/UX Design</a>
                     </div>
                 </div>
 
@@ -738,6 +738,356 @@
         <button id="acceptAllCookies" class="btn btn-outline-primary">Accetta tutti</button>
         <button id="rejectAllCookies" class="btn btn-outline-secondary">Rifiuta tutti</button>
         <a href="#" data-bs-toggle="modal" data-bs-target="#cookiePolicyModal" class="cookie-policy-link">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+
+    <!-- END COOKIE CONSENT BANNER -->
+     <!-- Modali per i diversi servizi -->
+
+<!-- Web Development Modal -->
+<div class="modal fade" id="webDevModal" tabindex="-1" aria-labelledby="webDevModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background: linear-gradient(135deg, #2563eb, #3b82f6); color: white;">
+          <h5 class="modal-title" id="webDevModalLabel">Web Development</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="images/services/web-dev.svg" alt="Web Development" class="img-fluid mb-3">
+            </div>
+            <div class="col-md-8">
+              <h2>Soluzioni Web Complete</h2>
+              <p class="lead">Trasformo la tua visione in un'esperienza web funzionale, scalabile e all'avanguardia.</p>
+
+              <p>Lo sviluppo web completo comprende tutti gli aspetti della creazione di un sito o un'applicazione web, dall'ideazione al deployment, includendo sia la parte frontend (ciò che gli utenti vedono) che quella backend (la "magia" dietro le quinte).</p>
+
+              <h4>Come posso aiutarti:</h4>
+              <ul class="service-list">
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Siti web aziendali</strong> - Presenza web professionale che rappresenta la tua identità e i tuoi valori</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Applicazioni web</strong> - Strumenti personalizzati per la tua azienda o per i tuoi clienti</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Sistemi di prenotazione</strong> - Come quello sviluppato per Supreme Barber Studio</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Dashboard e portali</strong> - Interfacce per visualizzare e gestire i tuoi dati</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Piattaforme su misura</strong> - Soluzioni che rispondono esattamente alle tue esigenze specifiche</li>
+              </ul>
+
+              <h4>Tecnologie utilizzate:</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">PHP</span>
+              </div>
+
+              <div class="highlight-box mt-4">
+                <h5><i class="fas fa-lightbulb"></i> Il mio approccio:</h5>
+                <p>Non mi limito a scrivere codice. Mi immergo nella tua realtà aziendale per comprendere a fondo gli obiettivi e le sfide che desideri superare. Ogni riga di codice è pensata strategicamente per promuovere il successo del tuo business.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-example mt-4">
+            <h4>Esempio di progetto:</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <img src="images/projects/sistema-di-prenotazione-online-preview.png" alt="Sistema di Prenotazione" class="img-fluid rounded">
+              </div>
+              <div class="col-md-6">
+                <h5>Sistema di Prenotazioni per Supreme Barber Studio</h5>
+                <p>Ho sviluppato un sistema completo che ha ridotto del 70% le chiamate telefoniche per prenotazioni e aumentato del 25% gli appuntamenti totali.</p>
+                <a href="#case-study" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Vedi Case Study</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="#contact" class="btn btn-primary" data-bs-dismiss="modal">Parliamo del tuo progetto</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Front-End Development Modal -->
+  <div class="modal fade" id="frontEndModal" tabindex="-1" aria-labelledby="frontEndModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background: linear-gradient(135deg, #2563eb, #3b82f6); color: white;">
+          <h5 class="modal-title" id="frontEndModalLabel">Front-End Development</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="images/services/front-end.svg" alt="Front-End Development" class="img-fluid mb-3">
+            </div>
+            <div class="col-md-8">
+              <h2>Interfacce Web Straordinarie</h2>
+              <p class="lead">Creo esperienze utente coinvolgenti che catturano l'attenzione e trasformano i visitatori in clienti.</p>
+
+              <p>Il front-end è il volto della tua presenza digitale e la prima impressione che dai ai tuoi utenti. Un'interfaccia ben progettata non è solo bella da vedere, ma guida intuitivamente gli utenti verso le azioni che desideri che compiano.</p>
+
+              <h4>Come posso aiutarti:</h4>
+              <ul class="service-list">
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Interfacce reattive</strong> - Design che si adatta perfettamente a ogni dispositivo</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Single Page Applications</strong> - Esperienze fluide e veloci come le applicazioni native</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Animazioni e transizioni</strong> - Movimento che guida l'attenzione e migliora l'esperienza</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Ottimizzazione delle performance</strong> - Caricamenti velocissimi e interazioni fluide</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Restyling di interfacce esistenti</strong> - Rinnovamento di siti datati con tecnologie moderne</li>
+              </ul>
+
+              <h4>Tecnologie utilizzate:</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3/SASS</span>
+                <span class="tech-tag">JavaScript ES6+</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">Bootstrap</span>
+                <span class="tech-tag">Framer Motion</span>
+              </div>
+
+              <div class="highlight-box mt-4">
+                <h5><i class="fas fa-lightbulb"></i> Il mio approccio:</h5>
+                <p>Progetto interfacce che trovano il perfetto equilibrio tra estetica e funzionalità. Il mio obiettivo è creare esperienze che non solo stupiscano visivamente, ma che siano anche incredibilmente intuitive e accessibili a tutti gli utenti.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-example mt-4">
+            <h4>Esempio di progetto:</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <img src="images/projects/landing-page.png" alt="Landing Page dCreativo" class="img-fluid rounded">
+              </div>
+              <div class="col-md-6">
+                <h5>Landing Page per il Brand dCreativo</h5>
+                <p>Una landing page moderna realizzata con TypeScript e Tailwind, con animazioni fluide che catturano l'attenzione e guidano l'utente verso l'azione.</p>
+                <a href="#projects" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Vedi Progetti</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="#contact" class="btn btn-primary" data-bs-dismiss="modal">Parliamo del tuo progetto</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back-End Development Modal -->
+  <div class="modal fade" id="backEndModal" tabindex="-1" aria-labelledby="backEndModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background: linear-gradient(135deg, #2563eb, #3b82f6); color: white;">
+          <h5 class="modal-title" id="backEndModalLabel">Back-End Development</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="images/services/back-end.svg" alt="Back-End Development" class="img-fluid mb-3">
+            </div>
+            <div class="col-md-8">
+              <h2>La Potenza Dietro le Quinte</h2>
+              <p class="lead">Costruisco l'infrastruttura robusta e scalabile che alimenta le tue applicazioni web.</p>
+
+              <p>Il backend è il cuore pulsante di ogni applicazione web. È qui che avviene l'elaborazione dei dati, la gestione degli utenti, la sicurezza e tutte le funzionalità critiche che fanno funzionare la tua applicazione.</p>
+
+              <h4>Come posso aiutarti:</h4>
+              <ul class="service-list">
+                <li><i class="fas fa-check-circle text-success"></i> <strong>API RESTful</strong> - Interfacce programmatiche efficienti e ben strutturate</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Sistemi di autenticazione</strong> - Protezione sicura dei dati degli utenti</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Database design</strong> - Strutture dati ottimizzate per le tue esigenze specifiche</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Automazioni</strong> - Processi automatizzati per risparmiare tempo e risorse</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Integrazione con servizi terzi</strong> - Connessione con API esterne e sistemi esistenti</li>
+              </ul>
+
+              <h4>Tecnologie utilizzate:</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">JWT</span>
+                <span class="tech-tag">API RESTful</span>
+                <span class="tech-tag">GraphQL</span>
+              </div>
+
+              <div class="highlight-box mt-4">
+                <h5><i class="fas fa-lightbulb"></i> Il mio approccio:</h5>
+                <p>Progetto architetture backend con la sicurezza e la scalabilità come priorità assolute. I miei sistemi sono costruiti per crescere con il tuo business, gestendo efficacemente l'aumento degli utenti e delle funzionalità nel tempo.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-example mt-4">
+            <h4>Esempio di progetto:</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <img src="images/projects/screen-12.jpg" alt="Dashboard Amministrativa" class="img-fluid rounded">
+              </div>
+              <div class="col-md-6">
+                <h5>Backend per Sistema di Prenotazioni</h5>
+                <p>Ho sviluppato un'infrastruttura backend che gestisce prenotazioni, utenti multi-livello (admin/staff/clienti) e automazioni per notifiche via email e SMS.</p>
+                <a href="#case-study" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Vedi Case Study</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="#contact" class="btn btn-primary" data-bs-dismiss="modal">Parliamo del tuo progetto</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- E-Commerce Modal -->
+  <div class="modal fade" id="ecommerceModal" tabindex="-1" aria-labelledby="ecommerceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background: linear-gradient(135deg, #2563eb, #3b82f6); color: white;">
+          <h5 class="modal-title" id="ecommerceModalLabel">E-Commerce</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="images/services/ecommerce.svg" alt="E-Commerce" class="img-fluid mb-3">
+            </div>
+            <div class="col-md-8">
+              <h2>Negozi Online che Vendono</h2>
+              <p class="lead">Trasformo i tuoi prodotti in un'esperienza di acquisto digitale fluida e coinvolgente che converte i visitatori in clienti.</p>
+
+              <p>L'e-commerce non è solo una vetrina online per i tuoi prodotti, ma un ecosistema completo che guida i clienti dall'interesse all'acquisto. Un buon negozio online deve essere facile da navigare, sicuro, affidabile e ottimizzato per le conversioni.</p>
+
+              <h4>Come posso aiutarti:</h4>
+              <ul class="service-list">
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Negozi online personalizzati</strong> - Soluzioni su misura per le tue esigenze specifiche</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Integrazioni Shopify</strong> - Personalizzazione e ottimizzazione di temi e funzionalità</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Sistemi di pagamento</strong> - Integrazione con gateway sicuri e affidabili</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Gestione inventario</strong> - Sistemi automatizzati per tenere traccia dei prodotti</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Ottimizzazione delle conversioni</strong> - Design e funzionalità pensate per massimizzare le vendite</li>
+              </ul>
+
+              <h4>Tecnologie utilizzate:</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">Shopify</span>
+                <span class="tech-tag">WooCommerce</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Stripe</span>
+                <span class="tech-tag">PayPal</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">MySQL</span>
+              </div>
+
+              <div class="highlight-box mt-4">
+                <h5><i class="fas fa-lightbulb"></i> Il mio approccio:</h5>
+                <p>Il mio obiettivo è creare un'esperienza di acquisto che non solo mostri i tuoi prodotti nel miglior modo possibile, ma che guidi intuitivamente i clienti attraverso il processo di acquisto, riducendo al minimo gli abbandoni del carrello e massimizzando le vendite.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-example mt-4">
+            <h4>Esempio di progetto:</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <img src="images/services/ecommerce-example.jpg" alt="E-Commerce Example" class="img-fluid rounded">
+              </div>
+              <div class="col-md-6">
+                <h5>E-commerce per Prodotti Artigianali</h5>
+                <p>Ho creato una piattaforma personalizzata per un produttore di articoli artigianali, con funzionalità di gestione dell'inventario e integrazione di pagamenti sicuri.</p>
+                <a href="#projects" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Vedi Progetti</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="#contact" class="btn btn-primary" data-bs-dismiss="modal">Parliamo del tuo progetto</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UI/UX Design Modal -->
+  <div class="modal fade" id="uiuxModal" tabindex="-1" aria-labelledby="uiuxModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background: linear-gradient(135deg, #2563eb, #3b82f6); color: white;">
+          <h5 class="modal-title" id="uiuxModalLabel">UI/UX Design</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="images/services/ui-ux.svg" alt="UI/UX Design" class="img-fluid mb-3">
+            </div>
+            <div class="col-md-8">
+              <h2>Esperienze Utente Straordinarie</h2>
+              <p class="lead">Creo interfacce intuitive e coinvolgenti che mettono l'utente al centro di ogni decisione di design.</p>
+
+              <p>Il design UI/UX non riguarda solo l'aspetto estetico, ma soprattutto come gli utenti interagiscono con il tuo prodotto. Un buon design UX risolve i problemi degli utenti e crea esperienze piacevoli che li invogliano a tornare.</p>
+
+              <h4>Come posso aiutarti:</h4>
+              <ul class="service-list">
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Audit UX</strong> - Analisi delle problematiche nell'esperienza utente attuale</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Wireframing e prototyping</strong> - Visualizzazione dei concetti prima dello sviluppo</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>UI Design</strong> - Interfacce moderne, accattivanti e funzionali</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Ottimizzazione dei processi</strong> - Riduzione dell'attrito nelle interazioni chiave</li>
+                <li><i class="fas fa-check-circle text-success"></i> <strong>Rebranding digitale</strong> - Rinnovamento dell'identità visiva online</li>
+              </ul>
+
+              <h4>Strumenti utilizzati:</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">Figma</span>
+                <span class="tech-tag">Adobe XD</span>
+                <span class="tech-tag">Sketch</span>
+                <span class="tech-tag">Photoshop</span>
+                <span class="tech-tag">Illustrator</span>
+                <span class="tech-tag">User Testing</span>
+                <span class="tech-tag">Wireframing</span>
+                <span class="tech-tag">Prototyping</span>
+              </div>
+
+              <div class="highlight-box mt-4">
+                <h5><i class="fas fa-lightbulb"></i> Il mio approccio:</h5>
+                <p>Parto sempre dalla comprensione dei tuoi utenti - chi sono, cosa vogliono raggiungere e quali ostacoli incontrano. Questo mi permette di creare design che non sono solo belli da vedere, ma che risolvono problemi reali e creano esperienze fluide e gratificanti.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-example mt-4">
+            <h4>Esempio di progetto:</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <img src="images/projects/salone.webp" alt="Supreme Barber Studio Rebranding" class="img-fluid rounded">
+              </div>
+              <div class="col-md-6">
+                <h5>Rebranding di Supreme Barber Studio</h5>
+                <p>Ho guidato il processo di rebranding da YourStyle Barbershop a Supreme Barber Studio, creando una nuova identità visiva che riflette il posizionamento premium del salone.</p>
+                <a href="#case-study" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Vedi Case Study</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <a href="#contact" class="btn btn-primary" data-bs-dismiss="modal">Parliamo del tuo progetto</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1000,6 +1350,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// JavaScript per i modali dei servizi
+document.addEventListener('DOMContentLoaded', function() {
+    // Aggiorna i link nel footer per aprire i modali
+    const serviceLinks = {
+      'Web Development': '#webDevModal',
+      'Front-End Development': '#frontEndModal',
+      'Back-End Development': '#backEndModal',
+      'E-Commerce': '#ecommerceModal',
+      'UI/UX Design': '#uiuxModal'
+    };
+
+    document.querySelectorAll('.footer-links a').forEach(link => {
+      const text = link.textContent.trim();
+      if (serviceLinks[text]) {
+        link.setAttribute('data-bs-toggle', 'modal');
+        link.setAttribute('data-bs-target', serviceLinks[text]);
+        link.setAttribute('href', '#');
+      }
+    });
+
+    // Fix per il problema del backdrop dei modali
+    const modals = document.querySelectorAll('.modal');
+
+    modals.forEach(function(modal) {
+      modal.addEventListener('hidden.bs.modal', function() {
+        // Rimuovi manualmente il backdrop se esiste
+        const backdrops = document.querySelectorAll('.modal-backdrop');
+        backdrops.forEach(function(backdrop) {
+          backdrop.remove();
+        });
+
+        // Rimuovi la classe modal-open dal body
+        document.body.classList.remove('modal-open');
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+      });
+    });
+  });
+
 </script>
 </body>
 </html>
