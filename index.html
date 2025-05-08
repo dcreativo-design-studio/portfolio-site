@@ -2425,6 +2425,103 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+            // Aggiungi questo al tuo JavaScript principale
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleziona tutti i link di navigazione
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    // Seleziona tutte le sezioni corrispondenti ai link
+    const sections = [];
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href.startsWith('#') && href !== '#') {
+            const section = document.querySelector(href);
+            if (section) {
+                sections.push({
+                    id: href,
+                    element: section,
+                    link: link
+                });
+            }
+        }
+    });
+
+    // Funzione per aggiornare la classe 'active' in base alla posizione di scroll
+    function updateActiveLink() {
+        const scrollPosition = window.scrollY + 100; // Aggiungiamo un offset per migliorare l'evidenziazione
+
+        // Imposta il link Home come attivo se siamo in cima alla pagina
+        if (scrollPosition < 300) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            const homeLink = document.querySelector('.nav-links a[href="#hero"]') ||
+                           document.querySelector('.nav-links a[href="#"]');
+            if (homeLink) {
+                homeLink.classList.add('active');
+            }
+            return;
+        }
+
+        // Verifica quale sezione è attualmente visibile
+        let currentSection = null;
+
+        sections.forEach(section => {
+            const sectionTop = section.element.offsetTop - 150;
+            const sectionBottom = sectionTop + section.element.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                currentSection = section;
+            }
+        });
+
+        // Rimuovi la classe 'active' da tutti i link
+        navLinks.forEach(link => link.classList.remove('active'));
+
+        // Aggiungi la classe 'active' al link corrispondente alla sezione corrente
+        if (currentSection) {
+            const activeLink = document.querySelector(`.nav-links a[href="${currentSection.id}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+    }
+
+    // Aggiungi lo stesso comportamento per il menu mobile
+    function updateMobileMenu() {
+        const mobileNavLinks = document.querySelectorAll('#nav-links a');
+        const activeDesktopLink = document.querySelector('.nav-links a.active');
+
+        if (activeDesktopLink) {
+            const activeHref = activeDesktopLink.getAttribute('href');
+            mobileNavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === activeHref) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    }
+
+    // Aggiungi l'evento scroll per aggiornare i link attivi
+    window.addEventListener('scroll', function() {
+        updateActiveLink();
+        updateMobileMenu();
+    });
+
+    // Esegui subito per impostare il link attivo corretto al caricamento della pagina
+    updateActiveLink();
+    updateMobileMenu();
+
+    // Aggiungi anche il comportamento del click per il menu mobile
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Impostiamo un timeout breve per consentire lo scroll prima di aggiornare il menu
+            setTimeout(() => {
+                updateActiveLink();
+                updateMobileMenu();
+            }, 100);
+        });
+    });
+});
 </script>
 </body>
 </html>
