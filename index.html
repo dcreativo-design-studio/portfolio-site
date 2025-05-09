@@ -866,7 +866,7 @@
         <div class="modal-body">
           <div class="row">
             <div class="col-md-4">
-              <img src="images/services/front-end.png" alt="Front-End Development" class="img-fluid mb-3">
+              <img src="images/services/api.svg" alt="Front-End Development" class="img-fluid mb-3">
             </div>
             <div class="col-md-8">
               <h2>Interfacce Web Straordinarie</h2>
@@ -1046,7 +1046,7 @@
             <h4>Esempio di progetto:</h4>
             <div class="row">
               <div class="col-md-6">
-                <img src="images/services/ecommerce-example.jpg" alt="E-Commerce Example" class="img-fluid rounded">
+                <img src="images\services\commerce.svg" alt="E-Commerce Example" class="img-fluid rounded">
               </div>
               <div class="col-md-6">
                 <h5>E-commerce per Prodotti Artigianali</h5>
@@ -1564,7 +1564,160 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 });
+// Aggiungi questo codice alla fine del file main.js
 
+document.addEventListener('DOMContentLoaded', function() {
+  /**
+   * Funzione per gestire correttamente i link nei modali che portano alle sezioni della pagina
+   * Chiude il modale e fa lo scroll alla sezione desiderata
+   */
+  function setupModalSectionLinks() {
+    // Seleziona tutti i modali
+    const modals = document.querySelectorAll('.modal');
+
+    // Elabora ogni modale
+    modals.forEach(modal => {
+      // Ottieni l'istanza del modale Bootstrap
+      const modalInstance = bootstrap.Modal.getInstance(modal) || new bootstrap.Modal(modal);
+
+      // Seleziona tutti i link nel modale che portano a sezioni della pagina (iniziano con #)
+      const sectionLinks = modal.querySelectorAll('a[href^="#"]');
+
+      // Imposta gli event listener per ogni link
+      sectionLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          // Previeni il comportamento di default
+          e.preventDefault();
+
+          // Ottieni la destinazione dallo href
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+
+          if (!targetSection) return; // Esci se la sezione target non esiste
+
+          // Memorizza la posizione di scroll della sezione target
+          const targetPosition = targetSection.offsetTop - 80; // -80 per compensare l'altezza dell'header
+
+          // Chiudi prima il modale
+          modalInstance.hide();
+
+          // Rimuovi manualmente eventuali backdrop residui e classi modal-open
+          function cleanupModal() {
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) backdrop.remove();
+            document.body.classList.remove('modal-open');
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+
+            // Ora esegui lo scroll fluido verso la sezione target
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+
+          // Esegui dopo che l'animazione di chiusura del modale è terminata
+          setTimeout(cleanupModal, 300);
+        });
+      });
+    });
+  }
+
+  // Imposta l'event listener per l'evento 'shown.bs.modal' su tutti i modali
+  const modalElements = document.querySelectorAll('.modal');
+  modalElements.forEach(modal => {
+    modal.addEventListener('shown.bs.modal', function() {
+      setupModalSectionLinks();
+    });
+  });
+
+  // Imposta anche immediatamente per gestire i modali già aperti
+  setupModalSectionLinks();
+
+  /**
+   * Funzione specifica per gestire i pulsanti con attributo data-bs-dismiss="modal"
+   * che dovrebbero anche scorrere verso una sezione specifica
+   */
+  function setupDismissButtons() {
+    // Seleziona tutti i pulsanti nei modali che hanno sia data-bs-dismiss="modal" che href iniziante con #
+    const dismissButtons = document.querySelectorAll('.modal-footer .btn[data-bs-dismiss="modal"][href^="#"], .modal-body .btn[data-bs-dismiss="modal"][href^="#"]');
+
+    dismissButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        // Previeni il comportamento di default
+        e.preventDefault();
+
+        // Ottieni la destinazione dallo href
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        if (!targetSection) return; // Esci se la sezione target non esiste
+
+        // Memorizza la posizione di scroll della sezione target
+        const targetPosition = targetSection.offsetTop - 80;
+
+        // Attendi che il modale sia completamente chiuso prima di eseguire lo scroll
+        setTimeout(function() {
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }, 400); // Attendi un po' più a lungo della transizione standard del modale
+      });
+    });
+  }
+
+  // Esegui subito setupDismissButtons e poi ogni volta che un modale viene mostrato
+  setupDismissButtons();
+  modalElements.forEach(modal => {
+    modal.addEventListener('shown.bs.modal', setupDismissButtons);
+  });
+
+  /**
+   * Fix specifico per gestire tutti i link nei modali con indirizzi alle sezioni
+   * Questo copre casi non specificamente gestiti dalle funzioni precedenti
+   */
+  function setupAllModalButtons() {
+    // Trova tutti i pulsanti nei modali che puntano a sezioni della pagina
+    document.querySelectorAll('.modal .btn[href^="#"]').forEach(button => {
+      // Conserva l'href originale
+      const targetHref = button.getAttribute('href');
+
+      // Se non ha già data-bs-dismiss, aggiungilo
+      if (!button.hasAttribute('data-bs-dismiss')) {
+        button.setAttribute('data-bs-dismiss', 'modal');
+      }
+
+      // Sovrascrivi l'evento click
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Trova la sezione target
+        const targetSection = document.querySelector(targetHref);
+        if (!targetSection) return;
+
+        // Memorizza la posizione di scroll
+        const targetPosition = targetSection.offsetTop - 80;
+
+        // Usa setTimeout per attendere la chiusura del modale
+        setTimeout(function() {
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }, 400);
+      });
+    });
+  }
+
+  // Imposta l'event listener per ogni modale
+  modalElements.forEach(modal => {
+    modal.addEventListener('shown.bs.modal', setupAllModalButtons);
+  });
+
+  // Esegui anche subito per gestire eventuali modali già aperti
+  setupAllModalButtons();
+});
 </script>
 </body>
 </html>
