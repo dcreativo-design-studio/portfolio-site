@@ -1331,3 +1331,164 @@ transition: transform 0.3s ease;
     transform: translateY(-2px);
     box-shadow: 0 7px 14px rgba(37, 99, 235, 0.3);
   }
+/* Aggiungi questo CSS al file style.css per migliorare l'aspetto della sezione progetti */
+
+/* Miglioramenti per i tab di filtro */
+.project-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.tab-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.tab-btn:hover::before {
+    width: 100%;
+}
+
+.tab-btn:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Miglioramenti per card progetti */
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-description {
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.project-btns {
+    margin-top: auto;
+}
+
+.project-image {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Animazioni per filtro progetti */
+.project-item {
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Garantisce che le card abbiano altezza uguale */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-4 {
+    margin-bottom: 30px;
+    display: flex;
+}
+
+/* Per posizionare meglio le immagini dei servizi */
+.project-image img[src*="svg"] {
+    padding: 40px;
+    background-color: #f8fafc;
+}
+
+/* Migliora il design adattivo */
+@media (max-width: 768px) {
+    .project-tabs {
+        gap: 0.5rem;
+    }
+
+    .tab-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .featured-project {
+        margin-bottom: 3rem;
+    }
+}
+
+/* Badge per "Servizio" vs "Progetto" */
+.project-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+/* Miglioramento per i featured project */
+.featured-project {
+    margin-bottom: 4rem;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Effetto hover per le immagini SVG */
+.project-image img[src*="svg"]:hover {
+    filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.4));
+}
